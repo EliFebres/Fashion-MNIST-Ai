@@ -1,0 +1,12 @@
+# Ignore virtual environment folder
+venv/
+env/
+.venv/
+.env/
+
+# Ignore data folder (purpose: to keep the github code base small and faster to download)
+data/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
