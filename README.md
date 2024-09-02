@@ -1,8 +1,8 @@
 # Fashion-MNIST-Ai
 
-Here's an example of how the data looks (*each class takes three-rows*):
+Here's an example of how the data looks:
 
-![](images\fashion-mnist-logo.png)
+![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/fashion-mnist-logo.png)
 
 ## License
 This is free and unencumbered software released into the public domain.
