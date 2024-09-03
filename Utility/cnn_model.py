@@ -12,32 +12,34 @@ class FashionMNISTModel(nn.Module):
         self.block_1 = nn.Sequential(
             nn.Conv2d(in_channels=input_shape,
                       out_channels=hidden_units,
-                      kernel_size=3,
-                      stride=1,
-                      padding=1
+                      kernel_size=KERNEL_SIZE_UNITS,
+                      stride=STRIDE_UNITS,
+                      padding=PADDING_UNITS
                       ),
             nn.ReLU(),
             nn.Conv2d(in_channels=hidden_units,
                       out_channels=hidden_units,
-                      kernel_size=3,
-                      stride=1,
-                      padding=1),
+                      kernel_size=KERNEL_SIZE_UNITS,
+                      stride=STRIDE_UNITS,
+                      padding=1
+                      ),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
         self.block_2 = nn.Sequential(
             nn.Conv2d(in_channels=hidden_units,
                       out_channels=hidden_units,
-                      kernel_size=3,
-                      stride=1,
-                      padding=1
+                      kernel_size=KERNEL_SIZE_UNITS,
+                      stride=STRIDE_UNITS,
+                      padding=PADDING_UNITS
                       ),
             nn.ReLU(),
             nn.Conv2d(in_channels=hidden_units,
                       out_channels=hidden_units,
-                      kernel_size=3,
-                      stride=1,
-                      padding=1),
+                      kernel_size=KERNEL_SIZE_UNITS,
+                      stride=STRIDE_UNITS,
+                      padding=PADDING_UNITS
+                      ),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2)
         )
