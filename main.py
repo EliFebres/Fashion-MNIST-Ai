@@ -68,9 +68,30 @@ for epoch in range(EPOCHS):
         # Calculate accuracy
         train_acc += calc_accuracy(y_true=y, y_pred=y_pred.argmax(dim=1))
     
+    # Testing
+    test_loss, test_acc = 0, 0
+    model.eval()
+    with torch.inference_mode():
+        for batch, (X, y) in enumerate(test_dataloader):
+            # Send data to GPU
+            X, y = X.to(device), y.to(device)
+            
+            # 1. Forward pass
+            test_pred = model(X)
+            
+            # 2. Calculate loss
+            loss = loss_fn(test_pred, y)
+            test_loss += loss.item()
+            
+            # 3. Calculate Loss
+            test_acc += calc_accuracy(y_true=y, y_pred=test_pred.argmax(dim=1))
+            
     # Divide by number of batches to get average loss and accuracy
     train_loss /= len(train_dataloader)
     train_acc /= len(train_dataloader)
-    
-    print(f"Train loss: {train_loss:.5f} | Train accuracy: {train_acc:.2f}%")
+    test_loss /= len(test_dataloader)
+    test_acc /= len(test_dataloader)
+            
+    # Print out what's happening
+    print(f"Train loss: {train_loss:.5f} | Train accuracy: {train_acc:.2f}% | Test loss: {test_loss:.5f} | Test accuracy: {test_acc:.2f}%")
     print('-' * 20)
