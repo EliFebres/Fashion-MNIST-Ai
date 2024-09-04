@@ -1,11 +1,10 @@
-import random
 import torch
 
 from torch import nn
-from torchvision import datasets, transforms
+from pathlib import Path
 from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
 
-from Utility.visualizer import single_image
 from Utility.cnn_model import FashionMNISTModel
 from Utility.utility import train_and_test_model
 
@@ -17,12 +16,6 @@ transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5
 train_data = datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
 test_data = datasets.FashionMNIST(root='./data', train=False, download=True, transform=transform)
 class_names = train_data.classes
-
-# Visualize a random image
-# random_idx = random.randint(0, len(train_data) - 1)
-# image, label = train_data[random_idx]
-# label = class_names[label]
-# single_image(image, label) # Visualize a random image from the training data
 
 # Use dataloader to creat batches for forward passes
 BATCH_SIZE = 32
@@ -37,6 +30,15 @@ optimizer = torch.optim.SGD(params=model.parameters(), lr=0.01)
 
 # Train Model
 torch.manual_seed(42)
-epochs = 10
-
+epochs = 15
 train_and_test_model(model, train_dataloader, test_dataloader, loss_fn, optimizer, device, epochs)
+
+# Export Model
+MODEL_PATH = Path("models")
+MODEL_PATH.mkdir(parents=True, exist_ok=True)
+MODEL_NAME = "fashion_mnist_model.pth"
+MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
+
+# Save the model state dict
+print(f"Saving model to: {MODEL_SAVE_PATH}")
+torch.save(obj=model.state_dict(), f=MODEL_SAVE_PATH)

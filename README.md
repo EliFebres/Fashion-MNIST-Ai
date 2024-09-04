@@ -1,6 +1,6 @@
 # Fashion-MNIST-Ai
 
-Build and train a deep neural network model, to recognize and classify images of clothing.
+Build and train a deep neural network model to recognize and classify images of clothing.
 
 Here's an example of how the data looks:
 
