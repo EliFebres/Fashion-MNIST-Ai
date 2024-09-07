@@ -17,6 +17,7 @@ Train loss: 0.22176 | Train accuracy: 91.83% | Test loss: 0.27062 | Test accurac
 I believe the model's performance is more accurate than its raw accuracy percentage suggests. The low quality of 28x28 images can sometimes lead to misclassifications, even by a human observer. If we were to exclude images that humans would struggle to distinguish, the model's accuracy would more accurately reflect its true capabilities.
 
 For instance, in the 3x3 grid of incorrect predictions, we see some challenges. On the last row, the first and second images could easily be misclassified by humans, let alone a simple TinyVGG model.
+
 ![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/3x3-grid-of-missclassifications.png)
 
 Despite these data challenges, I consider the model successful. It correctly and consistently classifies images that one would expect a model of this nature to get correct.
