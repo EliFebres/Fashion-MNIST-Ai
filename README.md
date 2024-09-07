@@ -1,10 +1,25 @@
 # Fashion-MNIST-Ai
 
-Build and train a deep neural network model to recognize and classify images of clothing.
+Build and train a convolutional neural network (CNN) model to recognize and classify images of clothing using the Fashion-MNIST dataset.
 
 Here's an example of how the data looks:
 
 ![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/fashion-mnist-logo.png)
+
+## Model
+
+I copied the TinyVGG, used in the [CNN explainer](https://poloclub.github.io/cnn-explainer/), to help construct the model. The provided link goes indepth into CNNs and the TinyVGG model so no need to explain it here.
+
+Model Stats:
+Train loss: 0.22176 | Train accuracy: 91.83% | Test loss: 0.27062 | Test accuracy: 90.36%
+
+## Model Evaluation
+I believe the model's performance is more accurate than its raw accuracy percentage suggests. The low quality of 28x28 images can sometimes lead to misclassifications, even by a human observer. If we were to exclude images that humans would struggle to distinguish, the model's accuracy would more accurately reflect its true capabilities.
+
+For instance, in the 3x3 grid of incorrect predictions, we see some challenges. On the last row, the first and second images could easily be misclassified by humans, let alone a simple TinyVGG model.
+![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/3x3-grid-of-missclassifications.png)
+
+Despite these data challenges, I consider the model successful. It correctly and consistently classifies images that one would expect a model of this nature to get correct.
 
 ## License
 This is free and unencumbered software released into the public domain.

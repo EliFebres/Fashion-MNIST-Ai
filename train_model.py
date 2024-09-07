@@ -30,7 +30,7 @@ optimizer = torch.optim.SGD(params=model.parameters(), lr=0.01)
 
 # Train Model
 torch.manual_seed(42)
-epochs = 15
+epochs = 25
 train_and_test_model(model, train_dataloader, test_dataloader, loss_fn, optimizer, device, epochs)
 
 # Export Model
