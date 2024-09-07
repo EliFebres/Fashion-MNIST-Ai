@@ -8,15 +8,15 @@ Here's an example of how the data looks:
 
 ## Model
 
-I copied the TinyVGG, used in the [CNN explainer](https://poloclub.github.io/cnn-explainer/), to help construct the model. The provided link goes indepth into CNNs and the TinyVGG model so no need to explain it here.
+I copied the TinyVGG, used in the [CNN explainer](https://poloclub.github.io/cnn-explainer/), to help construct the model. The provided link goes in depth into CNNs and the TinyVGG model, so there is no need to explain it here.
 
 Model Stats:
 Train loss: 0.22176 | Train accuracy: 91.83% | Test loss: 0.27062 | Test accuracy: 90.36%
 
 ## Model Evaluation
-I believe the model's performance is more accurate than its raw accuracy percentage suggests. The low quality of 28x28 images can sometimes lead to misclassifications, even by a human observer. If we were to exclude images that humans would struggle to distinguish, the model's accuracy would more accurately reflect its true capabilities.
+I believe the model's performance is more accurate than its raw accuracy percentage suggests. The low quality 28x28 images can sometimes lead to misclassifications, even by a human observer. If we were to exclude the images that humans would struggle to distinguish, it should improve the model's accuracy and better represent its true capabilities.
 
-For instance, in the 3x3 grid of incorrect predictions, we see some challenges. On the last row, the first and second images could easily be misclassified by humans, let alone a simple TinyVGG model.
+For instance, in the 3x3 grid of incorrect predictions, we see some challenges. On the last row, the second and third image could easily be misclassified by humans, let alone a simple TinyVGG model.
 
 ![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/3x3-grid-of-missclassifications.png)
 
