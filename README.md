@@ -20,7 +20,7 @@ For instance, in the 3x3 grid of incorrect predictions, we see some challenges. 
 
 ![](https://github.com/EliFebres/Fashion-MNIST-Ai/blob/staging/images/3x3-grid-of-missclassifications.png)
 
-Despite these data challenges, I consider the model successful. It correctly and consistently classifies images that one would expect a model of this nature to get correct.
+Despite these data challenges, I consider the model successful as it correctly and consistently classifies images that one would expect a model of this nature to get correct.
 
 ## License
 This is free and unencumbered software released into the public domain.
